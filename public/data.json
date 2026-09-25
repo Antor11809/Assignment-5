@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "name": "React",
+    "category": "Frontend",
+    "level": "Beginner-Friendly",
+    "rating": 4.9,
+    "badge": "Popular",
+    "description": "A declarative, component-based JavaScript library for building modern user interfaces."
+  },
+  {
+    "id": 2,
+    "name": "Vue.js",
+    "category": "Frontend",
+    "level": "Beginner-Friendly",
+    "rating": 4.8,
+    "badge": "Versatile",
+    "description": "An approachable and flexible JavaScript framework for building modern web interfaces."
+  },
+  {
+    "id": 3,
+    "name": "Svelte",
+    "category": "Frontend",
+    "level": "Intermediate",
+    "rating": 4.7,
+    "badge": "Fast",
+    "description": "A modern frontend framework that compiles components into highly efficient JavaScript."
+  },
+  {
+    "id": 4,
+    "name": "Node.js",
+    "category": "Backend",
+    "level": "Intermediate",
+    "rating": 4.8,
+    "badge": "Popular",
+    "description": "A JavaScript runtime used for building fast and scalable server-side applications."
+  },
+  {
+    "id": 5,
+    "name": "Express.js",
+    "category": "Backend",
+    "level": "Beginner-Friendly",
+    "rating": 4.7,
+    "badge": "Flexible",
+    "description": "A lightweight Node.js framework for building web applications and REST APIs."
+  },
+  {
+    "id": 6,
+    "name": "Django",
+    "category": "Backend",
+    "level": "Intermediate",
+    "rating": 4.8,
+    "badge": "Powerful",
+    "description": "A high-level Python web framework designed for secure and rapid application development."
+  },
+  {
+    "id": 7,
+    "name": "PostgreSQL",
+    "category": "Database",
+    "level": "Intermediate",
+    "rating": 4.9,
+    "badge": "Reliable",
+    "description": "A powerful open-source relational database known for reliability and advanced features."
+  },
+  {
+    "id": 8,
+    "name": "MongoDB",
+    "category": "Database",
+    "level": "Beginner-Friendly",
+    "rating": 4.7,
+    "badge": "Flexible",
+    "description": "A document-based NoSQL database designed for flexible and scalable applications."
+  },
+  {
+    "id": 9,
+    "name": "MySQL",
+    "category": "Database",
+    "level": "Beginner-Friendly",
+    "rating": 4.7,
+    "badge": "Popular",
+    "description": "A widely used relational database management system for modern web applications."
+  },
+  {
+    "id": 10,
+    "name": "Tailwind CSS",
+    "category": "Tooling",
+    "level": "Beginner-Friendly",
+    "rating": 4.8,
+    "badge": "Modern",
+    "description": "A utility-first CSS framework for quickly building custom and responsive interfaces."
+  },
+  {
+    "id": 11,
+    "name": "TypeScript",
+    "category": "Tooling",
+    "level": "Intermediate",
+    "rating": 4.9,
+    "badge": "Recommended",
+    "description": "A strongly typed programming language built on JavaScript for scalable applications."
+  },
+  {
+    "id": 12,
+    "name": "Vite",
+    "category": "Tooling",
+    "level": "Beginner-Friendly",
+    "rating": 4.8,
+    "badge": "Fast",
+    "description": "A modern frontend build tool that provides a fast and efficient development experience."
+  }
+]
