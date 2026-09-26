@@ -1,4 +1,5 @@
 import { use, useState } from "react";
+import { toast } from "react-toastify";
 import type { Technology } from "./TechnologyType";
 import TechnologyCards from "./TechnologyCards";
 import SelectedStack from "./SelectedStack";
@@ -8,13 +9,22 @@ const Technologies = ({
 }: {
   techPromise: Promise<Technology[]>;
 }) => {
-
   const technologies = use(techPromise);
 
   const [selectedTech, setSelectedTech] = useState<Technology[]>([]);
 
   const handleAddToStack = (technology: Technology) => {
+    const alreadySelected = selectedTech.some(
+      (item) => item.id === technology.id
+    );
+
+    if (alreadySelected) return;
+
     setSelectedTech([...selectedTech, technology]);
+
+    toast.success(
+      `${technology.name} technology selected successfully!`
+    );
   };
 
   const handleRemove = (id: number) => {
@@ -25,30 +35,39 @@ const Technologies = ({
     setSelectedTech(remainingTech);
   };
 
+  const handleRemoveAll = () => {
+    setSelectedTech([]);
+  };
+
   return (
     <section className="container mx-auto px-20 py-20">
 
       <h2 className="text-4xl font-bold">
-        Explore the <span className="text-pink-500">Technologies</span>
+        Explore the{" "}
+        <span className="text-pink-500">
+          Technologies
+        </span>
       </h2>
 
       <p className="text-gray-500 mt-2">
         Pick one technology per category to build your ideal stack.
       </p>
 
-      <div className="grid grid-cols-3 gap-8 mt-8">
+      <div className="grid grid-cols-4 gap-6 mt-8">
 
-        <div className="col-span-2">
+        <div className="col-span-3">
           <TechnologyCards
             technologies={technologies}
+            selectedTech={selectedTech}
             handleAddToStack={handleAddToStack}
           />
         </div>
 
-        <div>
+        <div className="col-span-1">
           <SelectedStack
             selectedTech={selectedTech}
             handleRemove={handleRemove}
+            handleRemoveAll={handleRemoveAll}
           />
         </div>
 
