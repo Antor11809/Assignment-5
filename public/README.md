@@ -1,73 +1,27 @@
-# Dev Stack Builder
+1. What is JSX, and why is it used in React?
 
-Dev Stack Builder is a React and TypeScript web application where users can explore different development technologies and build their preferred technology stack.
+JSX stands for JavaScript XML. It allows us to write HTML-like code inside JavaScript or TypeScript. It is used in React because it makes UI code easier to read and write.
 
-## Live Website
+2. What is the difference between props and state?
 
-Add your deployed website link here.
+Props are used to pass data from a parent component to a child component. State is used to store and manage data that can change inside a component.
 
-## Features
+3. What does the useState hook do, and where did you use it in this project?
 
-- Explore different development technologies
-- Technology data loaded from a JSON file
-- Add technologies to Your Stack
-- Prevent duplicate technology selection
-- Remove individual technologies
-- Remove all selected technologies
-- Toast notifications for different actions
-- Loading state using Suspense
-- Shared gradient theme
-- Technology icons loaded from JSON
+useState is used to store and update data in a React component. In this project, I used it to store the selected technologies in the stack.
 
-## Technologies Used
+4. What does the useEffect hook do, and why did you need it to load the JSON data?
 
-- React
-- TypeScript
-- Tailwind CSS
-- Vite
-- React Toastify
+useEffect is used to handle side effects such as data fetching. However, in this project I did not use useEffect. I loaded the JSON data using fetch(), a Promise, React use(), and Suspense.
 
-## JSON Data
+5. Why does every item in a .map() list need a unique key prop?
 
-Technology information is stored inside:
+A unique key helps React identify each item correctly when items are added, removed, or updated.
 
-`public/data.json`
+6. What is conditional rendering? Show one place you used it.
 
-Each technology contains:
+Conditional rendering means showing different UI based on a condition. In this project, I used it to show the empty stack message when no technology is selected.
 
-- id
-- name
-- category
-- description
-- icon
-- rating
-- difficulty
-- badge
+7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
 
-## How Data Is Loaded
-
-The technology data is fetched from the JSON file and passed to the application as a Promise.
-
-React `use()` and `Suspense` are used to handle the data and loading state.
-
-## Stack Functionality
-
-Users can add technologies to their stack.
-
-A technology cannot be added more than once.
-
-Users can also remove a single technology or clear the complete stack using the Remove All button.
-
-## Toast Notifications
-
-Toast notifications are shown when:
-
-- A technology is added
-- A duplicate technology is selected
-- A technology is removed
-- All technologies are removed
-
-## Installation
-
-```bash
-npm install
+Data is passed from parent to child using props. A child can communicate back to the parent by calling a function passed through props.
