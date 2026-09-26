@@ -1,20 +1,5 @@
 import type { Technology } from "./TechnologyType";
 
-import {
-  SiReact,
-  SiVuedotjs,
-  SiSvelte,
-  SiNodedotjs,
-  SiExpress,
-  SiDjango,
-  SiPostgresql,
-  SiMongodb,
-  SiMysql,
-  SiTailwindcss,
-  SiTypescript,
-  SiVite,
-} from "react-icons/si";
-
 const TechnologyCard = ({
   technology,
   handleAddToStack,
@@ -24,52 +9,14 @@ const TechnologyCard = ({
   handleAddToStack: (technology: Technology) => void;
   isSelected: boolean;
 }) => {
-  const getIcon = () => {
-    if (technology.name === "React")
-      return <SiReact className="text-4xl text-cyan-500" />;
-
-    if (technology.name === "Vue.js")
-      return <SiVuedotjs className="text-4xl text-green-500" />;
-
-    if (technology.name === "Svelte")
-      return <SiSvelte className="text-4xl text-orange-500" />;
-
-    if (technology.name === "Node.js")
-      return <SiNodedotjs className="text-4xl text-green-600" />;
-
-    if (technology.name === "Express.js")
-      return <SiExpress className="text-4xl text-gray-700" />;
-
-    if (technology.name === "Django")
-      return <SiDjango className="text-4xl text-green-800" />;
-
-    if (technology.name === "PostgreSQL")
-      return <SiPostgresql className="text-4xl text-blue-600" />;
-
-    if (technology.name === "MongoDB")
-      return <SiMongodb className="text-4xl text-green-600" />;
-
-    if (technology.name === "MySQL")
-      return <SiMysql className="text-4xl text-blue-500" />;
-
-    if (technology.name === "Tailwind CSS")
-      return <SiTailwindcss className="text-4xl text-cyan-500" />;
-
-    if (technology.name === "TypeScript")
-      return <SiTypescript className="text-4xl text-blue-600" />;
-
-    if (technology.name === "Vite")
-      return <SiVite className="text-4xl text-purple-500" />;
-
-    return null;
-  };
-
   return (
     <div className="border border-gray-200 rounded-xl p-5 shadow-sm">
 
-      <div className="mb-3">
-        {getIcon()}
-      </div>
+      <img
+        src={technology.icon}
+        alt={technology.name}
+        className="w-10 h-10 mb-3"
+      />
 
       <div className="flex justify-between items-center">
 
@@ -120,7 +67,7 @@ const TechnologyCard = ({
         </span>
 
         <span className="text-gray-500">
-          {technology.level}
+          {technology.difficulty}
         </span>
 
         <span>
@@ -135,10 +82,10 @@ const TechnologyCard = ({
         className={`mt-5 w-full py-2 rounded-lg text-white font-medium ${
           isSelected
             ? "bg-gray-400 cursor-not-allowed"
-            : "bg-gradient-to-r from-violet-700 to-pink-600"
+            : "brand-gradient-bg"
         }`}
       >
-        {isSelected ? "Selected" : "Add to Stack"}
+        {isSelected ? "✓ Added to Stack" : "Add to Stack"}
       </button>
 
     </div>

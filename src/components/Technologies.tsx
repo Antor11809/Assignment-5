@@ -18,7 +18,10 @@ const Technologies = ({
       (item) => item.id === technology.id
     );
 
-    if (alreadySelected) return;
+    if (alreadySelected) {
+      toast.warning(`${technology.name} is already selected!`);
+      return;
+    }
 
     setSelectedTech([...selectedTech, technology]);
 
@@ -28,15 +31,27 @@ const Technologies = ({
   };
 
   const handleRemove = (id: number) => {
+    const removedTechnology = selectedTech.find(
+      (technology) => technology.id === id
+    );
+
     const remainingTech = selectedTech.filter(
       (technology) => technology.id !== id
     );
 
     setSelectedTech(remainingTech);
+
+    if (removedTechnology) {
+      toast.info(
+        `${removedTechnology.name} removed from stack!`
+      );
+    }
   };
 
   const handleRemoveAll = () => {
     setSelectedTech([]);
+
+    toast.info("All technologies removed from stack!");
   };
 
   return (

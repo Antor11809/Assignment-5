@@ -14,7 +14,7 @@ const Footer = () => {
             <img
               src={Logo}
               alt="Dev Stack"
-              className="w-40 mb-4"
+              className="w-36 mb-4"
             />
 
             <p className="text-gray-400 text-sm leading-6 max-w-md">
@@ -34,7 +34,7 @@ const Footer = () => {
           {/* Product */}
           <div>
 
-            <h3 className="font-bold text-[#0F172A] mb-4">
+            <h3 className="font-semibold text-[#0F172A] mb-4">
               PRODUCT
             </h3>
 
@@ -50,7 +50,7 @@ const Footer = () => {
           {/* Company */}
           <div>
 
-            <h3 className="font-bold text-[#0F172A] mb-4">
+            <h3 className="font-semibold text-[#0F172A] mb-4">
               COMPANY
             </h3>
 
@@ -66,7 +66,7 @@ const Footer = () => {
           {/* Legal */}
           <div>
 
-            <h3 className="font-bold text-[#0F172A] mb-4">
+            <h3 className="font-semibold text-[#0F172A] mb-4">
               LEGAL
             </h3>
 
