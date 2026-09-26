@@ -17,6 +17,14 @@ const Technologies = ({
     setSelectedTech([...selectedTech, technology]);
   };
 
+  const handleRemove = (id: number) => {
+    const remainingTech = selectedTech.filter(
+      (technology) => technology.id !== id
+    );
+
+    setSelectedTech(remainingTech);
+  };
+
   return (
     <section className="container mx-auto px-20 py-20">
 
@@ -28,12 +36,23 @@ const Technologies = ({
         Pick one technology per category to build your ideal stack.
       </p>
 
-      <TechnologyCards
-        technologies={technologies}
-        handleAddToStack={handleAddToStack}
-      />
+      <div className="grid grid-cols-3 gap-8 mt-8">
 
-      <SelectedStack selectedTech={selectedTech} />
+        <div className="col-span-2">
+          <TechnologyCards
+            technologies={technologies}
+            handleAddToStack={handleAddToStack}
+          />
+        </div>
+
+        <div>
+          <SelectedStack
+            selectedTech={selectedTech}
+            handleRemove={handleRemove}
+          />
+        </div>
+
+      </div>
 
     </section>
   );
