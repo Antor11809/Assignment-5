@@ -1,11 +1,17 @@
 import type { Technology } from "./TechnologyType";
 
-const TechnologyCard = ({ technology }: { technology: Technology }) => {
+const TechnologyCard = ({
+  technology,
+  handleAddToStack,
+}: {
+  technology: Technology;
+  handleAddToStack: (technology: Technology) => void;
+}) => {
   return (
     <div className="border border-gray-200 rounded-xl p-5 shadow-sm">
 
       <div className="flex justify-between items-center">
-        <h2 className="text-xl font-bold text-[#0F172A]">
+        <h2 className="text-xl font-bold">
           {technology.name}
         </h2>
 
@@ -14,7 +20,7 @@ const TechnologyCard = ({ technology }: { technology: Technology }) => {
         </span>
       </div>
 
-      <p className="text-gray-500 text-sm mt-3">
+      <p className="text-gray-500 mt-3">
         {technology.description}
       </p>
 
@@ -28,7 +34,10 @@ const TechnologyCard = ({ technology }: { technology: Technology }) => {
         </span>
       </div>
 
-      <button className="mt-5 w-full bg-pink-500 text-white py-2 rounded-lg">
+      <button
+        onClick={() => handleAddToStack(technology)}
+        className="mt-5 w-full bg-pink-500 text-white py-2 rounded-lg"
+      >
         Add to Stack
       </button>
 

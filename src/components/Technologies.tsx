@@ -1,7 +1,7 @@
-
-import { use } from "react";
+import { use, useState } from "react";
 import type { Technology } from "./TechnologyType";
 import TechnologyCards from "./TechnologyCards";
+import SelectedStack from "./SelectedStack";
 
 const Technologies = ({
   techPromise,
@@ -10,6 +10,12 @@ const Technologies = ({
 }) => {
 
   const technologies = use(techPromise);
+
+  const [selectedTech, setSelectedTech] = useState<Technology[]>([]);
+
+  const handleAddToStack = (technology: Technology) => {
+    setSelectedTech([...selectedTech, technology]);
+  };
 
   return (
     <section className="container mx-auto px-20 py-20">
@@ -22,7 +28,12 @@ const Technologies = ({
         Pick one technology per category to build your ideal stack.
       </p>
 
-      <TechnologyCards technologies={technologies} />
+      <TechnologyCards
+        technologies={technologies}
+        handleAddToStack={handleAddToStack}
+      />
+
+      <SelectedStack selectedTech={selectedTech} />
 
     </section>
   );

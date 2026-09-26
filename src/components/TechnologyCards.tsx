@@ -3,8 +3,10 @@ import TechnologyCard from "./TechnologyCard";
 
 const TechnologyCards = ({
   technologies,
+  handleAddToStack,
 }: {
   technologies: Technology[];
+  handleAddToStack: (technology: Technology) => void;
 }) => {
   return (
     <div className="grid grid-cols-3 gap-6 mt-8">
@@ -12,6 +14,7 @@ const TechnologyCards = ({
         <TechnologyCard
           key={technology.id}
           technology={technology}
+          handleAddToStack={handleAddToStack}
         />
       ))}
     </div>
